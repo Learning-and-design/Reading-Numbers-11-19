@@ -3520,7 +3520,6 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		C3.Behaviors.Sin.Acts.SetEnabled,
 		C3.Plugins.Arr.Acts.Clear,
 		C3.Plugins.Sprite.Acts.SetOpacity,
-		C3.Plugins.Sprite.Cnds.PickByUID,
 		C3.Behaviors.Tween.Acts.TweenTwoProperties,
 		C3.Plugins.Audio.Acts.Stop,
 		C3.Plugins.System.Exps.max,
@@ -3620,7 +3619,6 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		{Pin: 0},
 		{Timer: 0},
 		{ArrowPointer: 0},
-		{ArrowPointerLarge: 0},
 		{ArrowStart: 0},
 		{Sine: 0},
 		{BackForward: 0},
@@ -3663,6 +3661,7 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		{Level: 0},
 		{ProgressFill: 0},
 		{Overlay: 0},
+		{id: 0},
 		{NumberLabels: 0},
 		{NumberCards: 0},
 		{Start: 0},
@@ -4119,6 +4118,24 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		() => 495,
 		() => 600,
 		() => 705,
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => ((n0.ExpInstVar()) === (v1.GetValue()) ? 1 : 0);
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (2 * (v0.GetValue() - 1));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => ((n0.ExpInstVar()) !== (v1.GetValue()) ? 1 : 0);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => ((2 * n0.ExpInstVar()) - 1);
+		},
 		() => 100,
 		() => 50,
 		p => {
@@ -4129,6 +4146,10 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 			const v0 = p._GetNode(0).GetVar();
 			const v1 = p._GetNode(1).GetVar();
 			return () => (and("RN_A_L0_", (5 + v0.GetValue())) + v1.GetValue());
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (v0.GetValue() + 1);
 		},
 		() => "Camera",
 		() => "Global Buttons Functions",
