@@ -85,7 +85,7 @@ export class AppInterface  {
 			
 		},
 
-		async Es_common_Event186_Act48(runtime, localVars)
+		async Es_common_Event187_Act48(runtime, localVars)
 		{
 			localStorage.setItem(runtime.globalVars.LOCAL_GAME_KEY, JSON.stringify(runtime.getInstanceByUid(5617).getJsonDataCopy()));
 			if(AppInterface!="undefined")

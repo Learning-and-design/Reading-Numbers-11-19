@@ -3637,7 +3637,7 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		C3.Plugins.System.Acts.SetTimescale,
 		C3.Plugins.Audio.Acts.SetPaused,
 		C3.Plugins.Audio.Acts.SetMuted,
-		C3.ScriptsInEvents.Es_common_Event186_Act48,
+		C3.ScriptsInEvents.Es_common_Event187_Act48,
 		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Plugins.Sprite.Acts.SetAnimSpeed,
 		C3.Plugins.Sprite.Acts.SetSize,
