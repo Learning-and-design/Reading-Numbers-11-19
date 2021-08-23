@@ -41,7 +41,7 @@ export class AppInterface  {
 
 		async Egame_Event3_Act1(runtime, localVars)
 		{
-			
+			//runtime.goToLayout("Level1");
 			const nextLevel = runtime.globalVars.GameLevel;
 			console.log("nextlevel", nextLevel);
 				if(nextLevel == 0){

@@ -4950,17 +4950,12 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			return () => (44 * (((9 - n0.ExpObject()) + (v1.GetValue() * 9)) / (9 * 3)));
+			const n1 = p._GetNode(1);
+			return () => (44 * (((9 - n0.ExpObject()) + (n1.ExpInstVar() * 9)) / (9 * 3)));
 		},
 		p => {
 			const n0 = p._GetNode(0);
 			return () => ((n0.ExpInstVar()) === (2) ? 1 : 0);
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			const n1 = p._GetNode(1);
-			return () => (44 * (((9 - n0.ExpObject()) + (n1.ExpInstVar() * 9)) / (9 * 3)));
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -4979,11 +4974,6 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		p => {
 			const n0 = p._GetNode(0);
 			return () => ((n0.ExpInstVar()) === (4) ? 1 : 0);
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			const v1 = p._GetNode(1).GetVar();
-			return () => ((n0.ExpInstVar()) < (v1.GetValue()) ? 1 : 0);
 		},
 		() => "Update",
 		p => {
