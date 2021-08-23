@@ -39,9 +39,11 @@ export class AppInterface  {
 			runtime.globalVars.StartDateTime = datetime;
 		},
 
-		async Egame_Event1_Act4(runtime, localVars)
+		async Egame_Event3_Act1(runtime, localVars)
 		{
+			
 			const nextLevel = runtime.globalVars.GameLevel;
+			console.log("nextlevel", nextLevel);
 				if(nextLevel == 0){
 				runtime.goToLayout("Level"+nextLevel+"-Start");
 				}else if(eval("runtime.globalVars.L"+nextLevel+"_Tutorial_Done")){
@@ -53,7 +55,7 @@ export class AppInterface  {
 			
 		},
 
-		async Es_common_Event47_Act1(runtime, localVars)
+		async Es_common_Event49_Act1(runtime, localVars)
 		{
 			
 			const nextLevel = runtime.globalVars.CurrentLevel+1;
@@ -66,7 +68,7 @@ export class AppInterface  {
 			
 		},
 
-		async Es_common_Event48_Act1(runtime, localVars)
+		async Es_common_Event50_Act1(runtime, localVars)
 		{
 			
 			const previousLevel = runtime.globalVars.CurrentLevel-1;
@@ -83,7 +85,7 @@ export class AppInterface  {
 			
 		},
 
-		async Es_common_Event184_Act48(runtime, localVars)
+		async Es_common_Event186_Act48(runtime, localVars)
 		{
 			localStorage.setItem(runtime.globalVars.LOCAL_GAME_KEY, JSON.stringify(runtime.getInstanceByUid(5617).getJsonDataCopy()));
 			if(AppInterface!="undefined")

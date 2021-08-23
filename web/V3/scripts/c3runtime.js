@@ -3621,11 +3621,11 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		C3.Plugins.Browser.Acts.ConsoleLog,
 		C3.Plugins.System.Acts.SubVar,
 		C3.ScriptsInEvents.Egame_Event1_Act2,
-		C3.ScriptsInEvents.Egame_Event1_Act4,
+		C3.ScriptsInEvents.Egame_Event3_Act1,
 		C3.Plugins.System.Exps.max,
 		C3.Plugins.Json.Acts.SetValue,
-		C3.ScriptsInEvents.Es_common_Event47_Act1,
-		C3.ScriptsInEvents.Es_common_Event48_Act1,
+		C3.ScriptsInEvents.Es_common_Event49_Act1,
+		C3.ScriptsInEvents.Es_common_Event50_Act1,
 		C3.Plugins.System.Exps.find,
 		C3.Plugins.System.Exps.layoutname,
 		C3.Plugins.System.Acts.GoToLayoutByName,
@@ -3637,7 +3637,7 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		C3.Plugins.System.Acts.SetTimescale,
 		C3.Plugins.Audio.Acts.SetPaused,
 		C3.Plugins.Audio.Acts.SetMuted,
-		C3.ScriptsInEvents.Es_common_Event184_Act48,
+		C3.ScriptsInEvents.Es_common_Event186_Act48,
 		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Plugins.Sprite.Acts.SetAnimSpeed,
 		C3.Plugins.Sprite.Acts.SetSize,
@@ -3656,7 +3656,12 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		C3.Plugins.System.Cnds.OnLayoutEnd,
 		C3.Plugins.Browser.Cnds.IsFullscreen,
 		C3.Plugins.PlatformInfo.Cnds.IsOnMobile,
-		C3.Plugins.Browser.Acts.RequestFullScreen
+		C3.Plugins.Browser.Acts.RequestFullScreen,
+		C3.Plugins.TiledBg.Acts.SetWidth,
+		C3.Plugins.TiledBg.Acts.SetSize,
+		C3.Plugins.TiledBg.Exps.Width,
+		C3.Plugins.System.Exps.loadingprogress,
+		C3.Plugins.System.Cnds.OnLoadFinished
 		];
 	};
 	self.C3_JsPropNameTable = [
@@ -3831,6 +3836,8 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		{ArrayL4Numbers: 0},
 		{Level4: 0},
 		{ArrayInstructions: 0},
+		{LoaderProgress: 0},
+		{LoaderProgressBG: 0},
 		{ButtonsSine: 0},
 		{Buttons: 0},
 		{Alphabets: 0},
@@ -3874,6 +3881,7 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		{LowBgMusicVol: 0},
 		{VoiceVolume: 0},
 		{LOCAL_GAME_KEY: 0},
+		{TotalLevels: 0},
 		{isMusic: 0},
 		{GameID: 0},
 		{GameName: 0},
@@ -4758,16 +4766,21 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		() => "levelDetails.level0.presentation.completed",
 		() => "levelDetails.level0.presentation.completedCount",
 		() => "levelDetails.level0.presentation.timeSpent",
-		() => 267,
-		() => "GL_A_5",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => ("GL_A_5" + v0.GetValue());
-		},
 		() => "GL_A_3",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => ("GL_A_3" + v0.GetValue());
+		},
+		() => 267,
+		() => "GL_A_6",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => ("GL_A_6" + v0.GetValue());
+		},
+		() => "GL_A_5",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => ("GL_A_5" + v0.GetValue());
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -4983,6 +4996,15 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 			const n0 = p._GetNode(0);
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => n0.ExpObject(f1("instructions"));
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => (n0.ExpObject() * f1());
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => and("progress", f0());
 		}
 	];
 }
