@@ -41,17 +41,17 @@ export class AppInterface  {
 
 		async Egame_Event3_Act1(runtime, localVars)
 		{
-			runtime.goToLayout("Level2");
-			// const nextLevel = runtime.globalVars.GameLevel;
-			// console.log("nextlevel", nextLevel);
-			// 	if(nextLevel == 0){
-			// 	runtime.goToLayout("Level"+nextLevel+"-Start");
-			// 	}else if(eval("runtime.globalVars.L"+nextLevel+"_Tutorial_Done")){
-			// 	runtime.goToLayout("Level"+nextLevel);
-			// 	}
-			// else{
-			// runtime.goToLayout("Level"+nextLevel+"-Tutorial");
-			// }
+			// runtime.goToLayout("Level2");
+			const nextLevel = runtime.globalVars.GameLevel;
+			console.log("nextlevel", nextLevel);
+				if(nextLevel == 0){
+				runtime.goToLayout("Level"+nextLevel+"-Start");
+				}else if(eval("runtime.globalVars.L"+nextLevel+"_Tutorial_Done")){
+				runtime.goToLayout("Level"+nextLevel);
+				}
+			else{
+			runtime.goToLayout("Level"+nextLevel+"-Tutorial");
+			}
 			
 		},
 
