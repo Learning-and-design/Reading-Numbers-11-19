@@ -3603,6 +3603,7 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		C3.Plugins.System.Exps.random,
 		C3.Plugins.System.Acts.SetFunctionReturnValue,
 		C3.Plugins.System.Cnds.OnLoadComplete,
+		C3.ScriptsInEvents.Es_level1_Event28_Act4,
 		C3.Behaviors.DragnDrop.Cnds.IsDragging,
 		C3.Plugins.Sprite.Cnds.IsOutsideLayout,
 		C3.Behaviors.DragnDrop.Acts.Drop,
@@ -3613,31 +3614,33 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		C3.Plugins.Arr.Acts.Pop,
 		C3.Plugins.Arr.Acts.Sort,
 		C3.Behaviors.Tween.Cnds.OnTweensFinished,
+		C3.ScriptsInEvents.Es_level3_Event51_Act4,
 		C3.Plugins.Arr.Cnds.CompareSize,
 		C3.Plugins.System.Cnds.PickRandom,
+		C3.ScriptsInEvents.Es_level2_Event31_Act4,
 		C3.Plugins.Sprite.Exps.Count,
 		C3.Plugins.System.Cnds.PickLastCreated,
 		C3.Plugins.Arr.Exps.UID,
 		C3.Plugins.Browser.Acts.ConsoleLog,
 		C3.Plugins.System.Acts.SubVar,
+		C3.ScriptsInEvents.Es_level4_Event95_Act4,
 		C3.ScriptsInEvents.Egame_Event1_Act2,
 		C3.ScriptsInEvents.Egame_Event3_Act1,
 		C3.Plugins.System.Exps.max,
 		C3.Plugins.Json.Acts.SetValue,
 		C3.ScriptsInEvents.Es_common_Event49_Act1,
-		C3.ScriptsInEvents.Es_common_Event50_Act1,
+		C3.Plugins.System.Acts.SaveState,
+		C3.Plugins.System.Acts.GoToLayoutByName,
 		C3.Plugins.System.Exps.find,
 		C3.Plugins.System.Exps.layoutname,
-		C3.Plugins.System.Acts.GoToLayoutByName,
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
 		C3.Behaviors.Tween.Cnds.IsAnyPlaying,
 		C3.Plugins.Sprite.Exps.UID,
 		C3.Plugins.System.Acts.SetObjectTimescale,
-		C3.Plugins.System.Acts.SaveState,
 		C3.Plugins.System.Acts.SetTimescale,
 		C3.Plugins.Audio.Acts.SetPaused,
 		C3.Plugins.Audio.Acts.SetMuted,
-		C3.ScriptsInEvents.Es_common_Event187_Act48,
+		C3.ScriptsInEvents.Es_common_Event197_Act48,
 		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Plugins.Sprite.Acts.SetAnimSpeed,
 		C3.Plugins.Sprite.Acts.SetSize,
@@ -3882,6 +3885,7 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		{VoiceVolume: 0},
 		{LOCAL_GAME_KEY: 0},
 		{TotalLevels: 0},
+		{JSON_UID: 0},
 		{isMusic: 0},
 		{GameID: 0},
 		{GameName: 0},
@@ -4390,6 +4394,7 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 			return () => add(11, n0.ExpObject(f1()));
 		},
 		() => "L1-Hint",
+		() => "L1-Tutorial",
 		() => "Rewards",
 		() => "Level1-Game",
 		p => {
@@ -4452,6 +4457,7 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 			return () => ((v0.GetValue() - 11) * 2);
 		},
 		() => "L3-Hint",
+		() => "L3-Tutorial",
 		() => "Level3-Game",
 		() => "RN_A_L3_3",
 		p => {
@@ -4558,6 +4564,7 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		},
 		() => "RN_A_L3_4",
 		() => "L2-Hint",
+		() => "L2-Tutorial",
 		() => "RN_A_L2_15",
 		() => "RN_A_L2_16",
 		() => "RN_A_L2_17",
@@ -4643,6 +4650,7 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 			return () => Math.floor(f0(v1.GetValue()));
 		},
 		() => "L4-Hint",
+		() => "L4-Tutorial",
 		() => "Level4-Game",
 		() => "RN_A_L4_2",
 		() => "Cards",
@@ -4784,6 +4792,18 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 			return () => ("GL_A_5" + v0.GetValue());
 		},
 		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (and("L", v0.GetValue()) + "-Hint");
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (and("Level", v0.GetValue()) + "-Tutorial");
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (and("L", v0.GetValue()) + "-Tutorial");
+		},
+		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => f0("Tutorial", f1());
@@ -4792,10 +4812,6 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => and("Level", v0.GetValue());
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (and("Level", v0.GetValue()) + "-Tutorial");
 		},
 		() => "HUD",
 		p => {
@@ -4830,10 +4846,6 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		() => 64,
 		() => "Other Functions",
 		() => 30,
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => (and("L", v0.GetValue()) + "-Hint");
-		},
 		() => "L0 Functions",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
@@ -4933,6 +4945,11 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => and("RN_A_L0_", (5 + f0("Audios")));
+		},
+		() => "GL Audios",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => and("GL_A_", f0("GL Audios"));
 		},
 		() => "L0 Audios",
 		p => {

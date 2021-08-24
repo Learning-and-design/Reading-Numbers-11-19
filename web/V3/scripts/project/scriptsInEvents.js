@@ -26,6 +26,41 @@ export class AppInterface  {
 {
 	const scriptsInEvents = {
 
+		async Es_level1_Event28_Act4(runtime, localVars)
+		{
+			let data = JSON.parse(localStorage.getItem(runtime.globalVars.LOCAL_GAME_KEY));
+			runtime.globalVars.RewardPoints = data.totalRewards;
+			runtime.getInstanceByUid(runtime.globalVars.JSON_UID).setJsonDataCopy(data);
+			runtime.globalVars.isMusic = data.isMusic;
+		},
+
+		async Es_level3_Event51_Act4(runtime, localVars)
+		{
+			let data = JSON.parse(localStorage.getItem(runtime.globalVars.LOCAL_GAME_KEY));
+			runtime.globalVars.RewardPoints = data.totalRewards;
+			runtime.getInstanceByUid(runtime.globalVars.JSON_UID).setJsonDataCopy(data);
+			runtime.globalVars.isMusic = data.isMusic
+			
+		},
+
+		async Es_level2_Event31_Act4(runtime, localVars)
+		{
+			let data = JSON.parse(localStorage.getItem(runtime.globalVars.LOCAL_GAME_KEY));
+			runtime.globalVars.RewardPoints = data.totalRewards;
+			runtime.getInstanceByUid(runtime.globalVars.JSON_UID).setJsonDataCopy(data);
+			runtime.globalVars.isMusic = data.isMusic;
+			
+		},
+
+		async Es_level4_Event95_Act4(runtime, localVars)
+		{
+			let data = JSON.parse(localStorage.getItem(runtime.globalVars.LOCAL_GAME_KEY));
+			runtime.globalVars.RewardPoints = data.totalRewards;
+			runtime.getInstanceByUid(runtime.globalVars.JSON_UID).setJsonDataCopy(data);
+			runtime.globalVars.isMusic = data.isMusic;
+			
+		},
+
 		async Egame_Event1_Act2(runtime, localVars)
 		{
 			var currentdate = new Date(); 
@@ -68,24 +103,7 @@ export class AppInterface  {
 			
 		},
 
-		async Es_common_Event50_Act1(runtime, localVars)
-		{
-			
-			const previousLevel = runtime.globalVars.CurrentLevel-1;
-			
-			if(previousLevel==0){
-					runtime.goToLayout("Level"+previousLevel+"-Start");
-			}
-				else if(eval("runtime.globalVars.L"+previousLevel+"_Tutorial_Done")){
-				runtime.goToLayout("Level"+previousLevel);
-				}
-			else{
-			runtime.goToLayout("Level"+previousLevel+"-Tutorial");
-			}
-			
-		},
-
-		async Es_common_Event187_Act48(runtime, localVars)
+		async Es_common_Event197_Act48(runtime, localVars)
 		{
 			localStorage.setItem(runtime.globalVars.LOCAL_GAME_KEY, JSON.stringify(runtime.getInstanceByUid(5617).getJsonDataCopy()));
 			if(AppInterface!="undefined")
