@@ -4301,6 +4301,7 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 		() => 495,
 		() => 600,
 		() => 705,
+		() => "L0-End",
 		() => "",
 		p => {
 			const n0 = p._GetNode(0);
@@ -4954,14 +4955,18 @@ ReflectionY(length){return this._GetRayReflectionY(length)},ReflectionAngle(){re
 			return () => (44 * (((9 - n0.ExpObject()) + (n1.ExpInstVar() * 9)) / (9 * 3)));
 		},
 		p => {
-			const n0 = p._GetNode(0);
-			return () => ((n0.ExpInstVar()) === (2) ? 1 : 0);
-		},
-		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const n1 = p._GetNode(1);
 			const v2 = p._GetNode(2).GetVar();
 			return () => f0(n1.ExpObject(), v2.GetValue());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => ((n0.ExpInstVar()) === (2) ? 1 : 0);
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => and("inc:---", v0.GetValue());
 		},
 		p => {
 			const n0 = p._GetNode(0);
