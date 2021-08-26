@@ -11,7 +11,7 @@ function setWeb(){
 	  isWeb = false
 	}
 }
-localStorage.clear();
+//localStorage.clear();
 let version = localStorage.getItem(LOCAL_GAME_KEY+"_VERSION");
 if(version!="1.0.2"|| !version) {
 localStorage.clear();
