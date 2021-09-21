@@ -11,11 +11,11 @@ function setWeb(){
 	  isWeb = false
 	}
 }
-localStorage.clear();
+//localStorage.clear();
 let version = localStorage.getItem(LOCAL_GAME_KEY+"_VERSION");
-if(version!="1.0.2"|| !version) {
+if(version!="2.0.0"|| !version) {
 localStorage.clear();
-version = "1.0.2";
+version = "2.0.0";
 localStorage.setItem(LOCAL_GAME_KEY+"_VERSION",version);
 }
 var levelDetails = {"currentLevel":{"level":0,"presentationCompleted":0},"level0":{"presentation":{"completed":0,"playCount":0,"completedCount":0,"timeSpent":0}},"level1":{"presentation":{"completed":0,"playCount":0,"completedCount":0,"timeSpent":0},"completed":0,"playCount":0,"completedCount":0,"timeSpent":0,"correctAttempts":0,"incorrectAttempts":0},"level2":{"presentation":{"completed":0,"playCount":0,"completedCount":0,"timeSpent":0},"completed":0,"playCount":0,"completedCount":0,"timeSpent":0,"correctAttempts":0,"incorrectAttempts":0},"level3":{"presentation":{"completed":0,"playCount":0,"completedCount":0,"timeSpent":0},"completed":0,"playCount":0,"completedCount":0,"timeSpent":0,"correctAttempts":0,"incorrectAttempts":0},"level4":{"presentation":{"completed":0,"playCount":0,"completedCount":0,"timeSpent":0},"completed":0,"playCount":0,"completedCount":0,"timeSpent":0,"correctAttempts":0,"incorrectAttempts":0}}
