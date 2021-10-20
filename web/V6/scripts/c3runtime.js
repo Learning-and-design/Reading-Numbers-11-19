@@ -4634,9 +4634,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Browser.Cnds.IsFullscreen,
 		C3.Plugins.PlatformInfo.Cnds.IsOnMobile,
 		C3.Plugins.Browser.Acts.RequestFullScreen,
-		C3.Plugins.TiledBg.Acts.SetWidth,
-		C3.Plugins.TiledBg.Acts.SetSize,
-		C3.Plugins.TiledBg.Exps.Width,
 		C3.Plugins.System.Exps.loadingprogress,
 		C3.Plugins.System.Cnds.OnLoadFinished
 	];
@@ -6006,13 +6003,13 @@ self.C3_ExpressionFuncs = [
 			return () => n0.ExpObject(f1("instructions"));
 		},
 		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => and("progress", f0());
+		},
+		p => {
 			const n0 = p._GetNode(0);
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => (n0.ExpObject() * f1());
-		},
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => and("progress", f0());
 		}
 ];
 
