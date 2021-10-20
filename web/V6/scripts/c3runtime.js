@@ -4956,7 +4956,8 @@ self.C3_JsPropNameTable = [
 	{activate: 0},
 	{increment_value: 0},
 	{speak: 0},
-	{UID: 0}
+	{UID: 0},
+	{loading: 0}
 ];
 }
 
@@ -6001,10 +6002,6 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => n0.ExpObject(f1("instructions"));
-		},
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => and("progress", f0());
 		},
 		p => {
 			const n0 = p._GetNode(0);
