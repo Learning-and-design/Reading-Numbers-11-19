@@ -33,7 +33,8 @@ document.addEventListener("message", handleEvent);
 
 function handleEvent(messageTemp) {	
 	isWeb = false;
-	messageData =  messageTemp.data;	
+	message =  JSON.parse(messageTemp);
+	messageData = message.data
 }
 
 runOnStartup(async runtime =>
@@ -55,6 +56,7 @@ runOnStartup(async runtime =>
 	}
 	else{
 		console.log("loaded from app ", messageData);
+		messageData =  message.data;
 	}
 
 
